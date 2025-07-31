@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
 #
-#   Copyright 2023-2024 Valory AG
+#   Copyright 2023-2025 Valory AG
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -54,6 +54,9 @@ class TestAddresses:
 
         if chain == ChainType.ETHEREUM:
             contracts = self.contracts["mainnet"]
+        # TODO: remove this after autonolas-registries also uses "optimism"
+        elif chain == ChainType.OPTIMISM:
+            contracts = self.contracts["optimistic"]
         else:
             contracts = self.contracts[chain.value]
 
